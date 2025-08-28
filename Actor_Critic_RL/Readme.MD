@@ -5,6 +5,8 @@ This repository contains implementations and utilities for reinforcement learnin
 For documentation:
 https://github.com/SujitJustineBarwa/Reinforcement_Learning_Projects/wiki
 
+![demo](demo.gif)
+
 ## Main program
 
 ### `cart_pole_AC_code.py`
