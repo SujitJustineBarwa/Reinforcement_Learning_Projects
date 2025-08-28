@@ -25,9 +25,11 @@ https://github.com/SujitJustineBarwa/Reinforcement_Learning_Projects/wiki
 
     ```
     - Logging of rewards and losses.
-    $$ \delta = G_t - V(s) = r + \gamma V(s_{t+1}) - V(s_t) $$
-    $$ L_{actor}(s) = \delta ln(\pi(A_t | s_t)) $$
-    $$ L_{critic}(s) = \delta^2 $$
+```math
+\delta = G_t - V(s) = r + \gamma V(s_{t+1}) - V(s_t) \\
+L_{actor}(s) = \delta ln(\pi(A_t | s_t)) \\
+L_{critic}(s) = \delta^2
+```
 
     - Here, $\delta$ is the advantage function.
 
