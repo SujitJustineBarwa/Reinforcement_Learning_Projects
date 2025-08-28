@@ -18,28 +18,7 @@ https://github.com/SujitJustineBarwa/Reinforcement_Learning_Projects/wiki
 ![Critic network](value_network.svg)  
 *Figure 2. Critic (value) network estimates V(s) for TD targets and advantage.*
 - Trains an agent to balance the pole using policy and value networks.
-- Key features:
-    - Customizable hyperparameters (learning rate, gamma, etc.).
-    ```bash
-    discount_factor = 0.95
-    actor_optimizer = optim.Adam(actor_model.parameters(), lr=1e-3)
-    critic_optimizer = optim.Adam(critic_model.parameters(), lr=1e-2)
-
-    ```
-    - Logging of rewards and losses.
-    ```math
-    \delta = G_t - V(s) = r + \gamma V(s_{t+1}) - V(s_t) 
-    ```
-    ```math
-    L_{actor}(s) = \delta ln(\pi(A_t | s_t))
-    ```
-    ```math
-    L_{critic}(s) = \delta^2
-    ```
-
-    - Here, $\delta$ is the advantage function.
-
-    - Model saving and loading functionality.
+- Model saving and loading functionality.
     ```bash
     def save_model(self, path="critic.pth"):
         """Save model parameters to a file"""
@@ -52,6 +31,24 @@ https://github.com/SujitJustineBarwa/Reinforcement_Learning_Projects/wiki
         self.eval()  # set to eval mode
         print(f"Critic model loaded from {path}")
     ```
+- Key features:
+    - Customizable hyperparameters (learning rate, gamma, etc.).
+    ```bash
+    discount_factor = 0.95
+    actor_optimizer = optim.Adam(actor_model.parameters(), lr=1e-3)
+    critic_optimizer = optim.Adam(critic_model.parameters(), lr=1e-2)
+
+    ```
+    - Logging of rewards and losses.Here, $\delta$ is the advantage function.
+```math
+    \delta = G_t - V(s) = r + \gamma V(s_{t+1}) - V(s_t) 
+```
+```math
+    L_{actor}(s) = \delta ln(\pi(A_t | s_t))
+```
+```math
+    L_{critic}(s) = \delta^2
+```
 
 #### Usage
 
